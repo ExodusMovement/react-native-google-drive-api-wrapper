@@ -1,4 +1,3 @@
-import RNFS from 'react-native-fs'
 import utf8 from 'utf8'
 import { StaticUtils } from 'simple-common-utils'
 import GDrive from './GDrive'
@@ -10,7 +9,6 @@ export default class Files {
 
   constructor(params = {}) {
     this.params = params
-
     ;[['boundary', 'foo_bar_baz']].forEach(
       (nameValue) =>
         (this.params[nameValue[0]] = this.params[nameValue[0]] || nameValue[1])
@@ -109,7 +107,7 @@ export default class Files {
     })
   }
 
-  download(fileId, downloadFileOptions, queryParams = {}) {
+  getDownloadOptions(fileId, downloadFileOptions, queryParams = {}) {
     queryParams.alt = 'media'
 
     const parameters = GDrive._stringifyQueryParams(queryParams)
@@ -123,7 +121,7 @@ export default class Files {
       downloadFileOptions.headers
     )
 
-    return RNFS.downloadFile(downloadFileOptions)
+    return downloadFileOptions
   }
 
   list(queryParams) {
