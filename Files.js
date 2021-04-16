@@ -1,6 +1,6 @@
 import utf8 from 'utf8'
-import { StaticUtils } from 'simple-common-utils'
 import GDrive from './GDrive'
+import { StaticUtils } from './Utils'
 
 const uploadUrl = 'https://www.googleapis.com/upload/drive/v3/files'
 
