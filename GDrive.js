@@ -1,6 +1,6 @@
 import Files from './Files'
 import Permissions from './Permissions'
-import { StaticUtils, ArrayStringifier } from 'simple-common-utils'
+import { StaticUtils, ArrayStringifier } from './Utils' 
 
 export default class GDrive {
   static _urlFiles = 'https://www.googleapis.com/drive/v3/files'

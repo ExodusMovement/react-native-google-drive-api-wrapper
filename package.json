@@ -6,9 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "simple-common-utils": "latest"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ExodusMovement/react-native-google-drive-api-wrapper.git"
