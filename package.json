@@ -1,6 +1,6 @@
 {
   "name": "@exodus/react-native-google-drive-api-wrapper",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "This wrapper facilitates the use of the google drive api.",
   "main": "GDrive.js",
   "scripts": {
