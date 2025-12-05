@@ -28,7 +28,13 @@ export default class Files {
     if (media.constructor == String) {
       body += `${media}${ending}`
     } else {
-      body = new Uint8Array([...utf8fromString(body), ...media, ...utf8fromString(ending)])
+      const bodyBytes = utf8fromString(body)
+      const endingBytes = utf8fromString(ending)
+      const result = new Uint8Array(bodyBytes.length + media.length + endingBytes.length)
+      result.set(bodyBytes, 0)
+      result.set(media, bodyBytes.length)
+      result.set(endingBytes, bodyBytes.length + media.length)
+      body = result
     }
 
     return fetch(`${uploadUrl}?uploadType=multipart`, {
