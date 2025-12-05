@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ExodusMovement/react-native-google-drive-api-wrapper/issues"
   },
-  "homepage": "https://github.com/ExodusMovement/react-native-google-drive-api-wrapper#readme"
+  "homepage": "https://github.com/ExodusMovement/react-native-google-drive-api-wrapper#readme",
+  "dependencies": {
+    "@exodus/bytes": "^1.0.0-rc.7"
+  }
 }

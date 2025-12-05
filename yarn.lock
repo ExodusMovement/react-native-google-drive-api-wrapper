@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+"@exodus/bytes@^1.0.0-rc.7":
+  version "1.0.0-rc.7"
+  resolved "https://registry.yarnpkg.com/@exodus/bytes/-/bytes-1.0.0-rc.7.tgz#3a0d26008b627e7da66dd72229c915e088c66948"
+  integrity sha512-a9La6GjLwoDuSWXrNkI3WG4st+3XtdzhiPDXd989gZVpwmxMlE+XT+ElG3/IDshuaxxSJ7CybtpM+RG3pLpfAQ==

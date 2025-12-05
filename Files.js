@@ -1,6 +1,5 @@
-import utf8 from 'utf8'
+import { utf8fromString } from '@exodus/bytes/utf8.js'
 import GDrive from './GDrive'
-import { StaticUtils } from './Utils'
 
 const uploadUrl = 'https://www.googleapis.com/upload/drive/v3/files'
 
@@ -29,11 +28,7 @@ export default class Files {
     if (media.constructor == String) {
       body += `${media}${ending}`
     } else {
-      body = new Uint8Array(
-        StaticUtils.encodedUtf8ToByteArray(utf8.encode(body))
-          .concat(media)
-          .concat(StaticUtils.encodedUtf8ToByteArray(utf8.encode(ending)))
-      )
+      body = new Uint8Array([...utf8fromString(body), ...media, ...utf8fromString(ending)])
     }
 
     return fetch(`${uploadUrl}?uploadType=multipart`, {
