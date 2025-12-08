@@ -27,7 +27,7 @@ export default class Files {
 
     if (media.constructor == String) {
       body += `${media}${ending}`
-    } else {
+    } else if (media instanceof Uint8Array) {
       const bodyBytes = utf8fromString(body)
       const endingBytes = utf8fromString(ending)
       const result = new Uint8Array(bodyBytes.length + media.length + endingBytes.length)
@@ -35,6 +35,8 @@ export default class Files {
       result.set(media, bodyBytes.length)
       result.set(endingBytes, bodyBytes.length + media.length)
       body = result
+    } else {
+      throw new TypeError('media must be a string or Uint8Array')
     }
 
     return fetch(`${uploadUrl}?uploadType=multipart`, {
